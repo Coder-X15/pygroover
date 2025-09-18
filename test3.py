@@ -1,3 +1,5 @@
+# overlay test
+
 from src.note import *
 from src.beat import *
 from src.player import *
@@ -46,42 +48,26 @@ notes1 = [
 ]
 
 notes2 = [
-    ('C3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('F3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('A3', note_duration(4)),
-    ('mute', note_duration(2)),
-    ('A3', note_duration(4)),
-    ('mute', note_duration(2)),
-    ('G3', note_duration(2)),
     ('mute', note_duration(1)),
-    ('C3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('F3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('G3', note_duration(4)),
+    ('F4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('G3', note_duration(4)),
+    ('G4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('F3', note_duration(2)),
-    ('E3', note_duration(4)),
-    ('D3', note_duration(2)),
+    ('C4', note_duration(2)),
     ('mute', note_duration(2)),
-    ('C3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('F3', note_duration(4)),
-    ('D3', note_duration(4)),
-    ('F3', note_duration(1)),
-    ('G3', note_duration(2)),
-    ('E3', note_duration(1)),
-    ('D3', note_duration(4)),
-    ('C3', note_duration(4)),
+    ('G4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('C3', note_duration(2)),
-    ('G3', note_duration(2)),
+    ('A5', note_duration(1)),
     ('mute', note_duration(2)),
-    ('F3', note_duration(4))
+    ('C4', note_duration(2)),
+    ('mute', note_duration(2)),
+    ('F4', note_duration(1)),
+    ('mute', note_duration(2)),
+    ('G4', note_duration(1)),
+    ('mute', note_duration(2)),
+    ('C4', note_duration(2)),
+    ('mute', note_duration(2)),
+    ('C4', note_duration(2)),
 ]
 
 # convert each of them into the note samples
@@ -89,10 +75,10 @@ note_bytes1 = []
 note_bytes2 = []
 
 for note, duration in notes1:
-    note_bytes1.append(Note(freq = notes_freq_dict[note], duration = duration).fit(sawtooth_transformer))
+    note_bytes1.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.2).fit(square_transformer))
 
 for note, duration in notes2:
-    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration).fit(square_transformer))
+    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.5).fit(sine_transformer))
 
 
 
@@ -113,7 +99,7 @@ elif len(blyat2) > len(blyat1):
 
 # overlay blyat2 on blyat1
 final = (blyat1 + blyat2)/2
-
+# final = blyat2
 song = final.tobytes()
 
 # play the song

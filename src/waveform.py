@@ -24,7 +24,7 @@ class Sine(Waveform):
                  volume : float = 0.5, 
                  fs : int = 44100):
         sample = (np.sin(2 * np.pi * np.arange(fs * duration) * freq / fs)).astype(np.float32)
-        return sample
+        return sample * volume
     
 class Square(Waveform):
     # class for a square wave
@@ -37,7 +37,7 @@ class Square(Waveform):
                  volume : float = 0.5, 
                  fs : int = 44100):
         sample = np.sign(np.sin(2 * np.pi * np.arange(fs * duration) * freq / fs)).astype(np.float32)
-        return sample
+        return sample * volume
 
 class Sawtooth(Waveform):
     # class for a sawtooth wave
@@ -51,7 +51,7 @@ class Sawtooth(Waveform):
                  fs : int = 44100):
         x = np.arange(fs * duration//2) * freq / fs
         sample = 2 * (x - np.floor(x + 0.5))
-        return sample
+        return sample * volume
     
 class Triangle(Waveform):
     # class for a triangle wave
@@ -65,7 +65,7 @@ class Triangle(Waveform):
                  fs : int = 44100):
         x = np.arange(fs * duration//2) * freq / fs
         sample = 2 * np.abs(2*(x - np.floor(x + 0.5))) - 1
-        return sample  
+        return sample * volume
     
 # waveform transformers exported
 sine_transformer = Sine()
