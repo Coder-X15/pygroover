@@ -13,6 +13,7 @@ My main source of inspiration for this small project came from Strudel REPL. The
 These steps work only in the current build. These shall be replaced with standard Python installation procedures once this becomes a Python module available on PyPI.
 - Clone this repo and `cd` into it
 - Create a `virtualenv` and activate it in the folder
+- Install requirements: `pip install -r requirements.txt`
 - Follow the syntax and make music, or run `python test2.py` for a groovy track to dance to.
 
 ## Syntax:
