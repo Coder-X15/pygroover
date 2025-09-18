@@ -57,7 +57,7 @@ notes2 = [
     ('mute', note_duration(2)),
     ('G4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('A5', note_duration(1)),
+    ('A4', note_duration(1)),
     ('mute', note_duration(2)),
     ('C4', note_duration(2)),
     ('mute', note_duration(2)),
