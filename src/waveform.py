@@ -53,7 +53,22 @@ class Sawtooth(Waveform):
         sample = 2 * (x - np.floor(x + 0.5))
         return sample
     
+class Triangle(Waveform):
+    # class for a triangle wave
+    def __init__(self):
+        super().__init__()
+        pass
+
+    def transform(self, freq : float = 440, 
+                 duration : float = 5.0, 
+                 volume : float = 0.5, 
+                 fs : int = 44100):
+        x = np.arange(fs * duration//2) * freq / fs
+        sample = 2 * np.abs(2*(x - np.floor(x + 0.5))) - 1
+        return sample  
+    
 # waveform transformers exported
 sine_transformer = Sine()
 square_transformer = Square()
 sawtooth_transformer = Sawtooth()
+triangle_transformer = Triangle()

@@ -50,7 +50,7 @@ notes = [
 note_bytes = []
 
 for note, duration in notes:
-    note_bytes.append(Note(freq = notes_freq_dict[note], duration = duration).fit(square_transformer))
+    note_bytes.append(Note(freq = notes_freq_dict[note], duration = duration).fit(triangle_transformer))
 
 # concat the bytes
 concated_song = b''.join(note_bytes)
