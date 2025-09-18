@@ -31,7 +31,7 @@ These work only in the current build. These shall be replaced with proper import
                                                 beats_per_measure=<desired beats per measure>, 
                                                 beat_note=<which note gets a whole beat>)
     ```
-    Now, the arguments `beats_per_measure` and `beat_note` are what determines the time signature of the song. The time signature will be $$ \frac{\text{Beats per measure}}{\text{Beat note}}$$. Beat note can be something like $1$ (a whole note gets a beat), $2$ (a half note gets a beat), $4$ (a quarter note gets a beat) and so on. \
+    Now, the arguments `beats_per_measure` and `beat_note` are what determines the time signature of the song. The time signature will be $` \frac{\text{Beats per measure}}{\text{Beat note}} `$. Beat note can be something like $1$ (a whole note gets a beat), $2$ (a half note gets a beat), $4$ (a quarter note gets a beat) and so on. \
     With this, the duration of a note can be mentioned like:
     ```python
     note_duration(4) # a quarter note
@@ -84,16 +84,20 @@ These work only in the current build. These shall be replaced with proper import
 ## Upcoming Features
 These may arrive either via collaboration or by myself, my involvement may reduce as of now though. It will be great to have great collaborators from the community!
 1. Sound mixing
-2. More waveform transformers (esp. for triangle wave)
+2. More waveform transformers
 3. Drum synths
 4. Track looping
 5. Grammar for interpreting note strings (inputs like `"A42 B42 C#44 - C#42"` etc.)
 In short, one will be able to use PyGroover just like Strudel REPL but without the live component for now (until another ambitious warrior makes it happen!!).
 
 ## TODO
+Phase 1:
 1. Write unit tests
 2. Implement more wave transformers if I can/ I have time
+    - Triangle (done)
+    - Any other stuff I don't really know about
 3. Add a `setup.py` file if I can, plus some path fixing ig????
+4. Add MIDI sounds (classic piano, guitar)
 
 
     
