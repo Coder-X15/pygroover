@@ -88,6 +88,7 @@ These may arrive either via collaboration or by myself, my involvement may reduc
 3. Drum synths
 4. Track looping
 5. Grammar for interpreting note strings (inputs like `"A42 B42 C#44 - C#42"` etc.)
+In short, one will be able to use PyGroover just like Strudel REPL but without the live component for now (until another ambitious warrior makes it happen!!).
 
 ## TODO
 1. Write unit tests
