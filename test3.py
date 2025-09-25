@@ -9,6 +9,7 @@ from src.globals import *
 note_duration = create_duration_calculator(bpm=120, beats_per_measure=4, beat_note=1)
 
 notes1 = [
+    ('mute', note_duration(1)),
     ('C4', note_duration(4)),
     ('D4', note_duration(4)),
     ('F4', note_duration(4)),
@@ -44,10 +45,12 @@ notes1 = [
     ('C4', note_duration(2)),
     ('G4', note_duration(2)),
     ('mute', note_duration(2)),
-    ('F4', note_duration(4))
+    ('F4', note_duration(2)),
+    ('mute', note_duration(4))
 ]
 
 notes2 = [
+    ('mute', note_duration(1)),
     ('mute', note_duration(1)),
     ('F4', note_duration(1)),
     ('mute', note_duration(2)),
@@ -59,15 +62,18 @@ notes2 = [
     ('mute', note_duration(2)),
     ('A4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('C4', note_duration(2)),
-    ('mute', note_duration(2)),
+    ('C5', note_duration(4)),
+    ('B4', note_duration(4)),
+    ('A4', note_duration(4)),
+    ('G4', note_duration(4)),
     ('F4', note_duration(1)),
     ('mute', note_duration(2)),
     ('G4', note_duration(1)),
     ('mute', note_duration(2)),
-    ('C4', note_duration(2)),
-    ('mute', note_duration(2)),
-    ('C4', note_duration(2)),
+    ('C4', note_duration(1)),
+    ('mute', note_duration(4)),
+    ('C4', note_duration(1)),
+    ('mute', note_duration(4))
 ]
 
 # convert each of them into the note samples
@@ -78,7 +84,7 @@ for note, duration in notes1:
     note_bytes1.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.2).fit(square_transformer))
 
 for note, duration in notes2:
-    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.5).fit(sine_transformer))
+    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.8).fit(sine_transformer))
 
 
 
