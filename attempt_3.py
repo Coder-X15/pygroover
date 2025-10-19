@@ -9,7 +9,6 @@ from src.globals import *
 note_duration = create_duration_calculator(bpm=120, beats_per_measure=4, beat_note=1)
 
 notes1 = [
-    ('mute', note_duration(1)),
     ('C4', note_duration(4)),
     ('D4', note_duration(4)),
     ('F4', note_duration(4)),
@@ -51,7 +50,6 @@ notes1 = [
 
 notes2 = [
     ('mute', note_duration(1)),
-    ('mute', note_duration(1)),
     ('F4', note_duration(1)),
     ('mute', note_duration(2)),
     ('G4', note_duration(1)),
@@ -81,10 +79,10 @@ note_bytes1 = []
 note_bytes2 = []
 
 for note, duration in notes1:
-    note_bytes1.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.2).fit(square_transformer))
+    note_bytes1.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.5).fit(square_transformer))
 
 for note, duration in notes2:
-    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.8).fit(sine_transformer))
+    note_bytes2.append(Note(freq = notes_freq_dict[note], duration = duration, volume = 0.2).fit(sine_transformer))
 
 
 

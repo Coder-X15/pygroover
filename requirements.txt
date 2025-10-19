@@ -1,2 +1,6 @@
+# dev requirements
 numpy
 pyaudio
+
+# test requirements
+pytest
