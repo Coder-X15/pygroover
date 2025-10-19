@@ -21,14 +21,14 @@ class WaveformTest(unittest.TestCase):
         # testing for sine waveform transformer
         with self.assertRaises(ValueError):
             pgn.Note(
-                freq = "440",
+                freq = "440", # type: ignore
                 duration = 5.0,
                 volume = 0.5,
                 fs = 44100
             )
 
             pgn.Note(
-                freq = "440.00",
+                freq = "440.00", # type: ignore
                 duration = 5.0,
                 volume = 0.5,
                 fs = 44100
@@ -38,7 +38,7 @@ class WaveformTest(unittest.TestCase):
         # testing for sine waveform transformer
         with self.assertRaises(ValueError):
             pgn.Note(
-                freq = None,
+                freq = None, # type: ignore
                 duration = 5.0,
                 volume = 0.5,
                 fs = 44100
@@ -61,14 +61,14 @@ class WaveformTest(unittest.TestCase):
                 freq = 440.0,
                 duration = 5.0,
                 volume = 0.5,
-                fs = "44100"
+                fs = "44100" # type: ignore
             )
 
             pgn.Note(
                 freq = 440.0,
                 duration = 5.0,
                 volume = 0.5,
-                fs = "44100.00"
+                fs = "44100.00" # type: ignore
             )
 
     def test_sampling_rate_none(self):
@@ -78,7 +78,7 @@ class WaveformTest(unittest.TestCase):
                 freq = 440.0,
                 duration = 5.0,
                 volume = 0.5,
-                fs = None
+                fs = None # type: ignore
             )
 
     def test_sampling_rate_negative(self):
@@ -97,14 +97,14 @@ class WaveformTest(unittest.TestCase):
             pgn.Note(
                 freq = 440.0,
                 duration = 5.0,
-                volume = "0.5",
+                volume = "0.5", # type: ignore
                 fs = 44100
             )
 
             pgn.Note(
                 freq = 440.0,
                 duration = 5.0,
-                volume = "0.50",
+                volume = "0.50", # type: ignore
                 fs = 44100
             )
 
@@ -114,7 +114,7 @@ class WaveformTest(unittest.TestCase):
             pgn.Note(
                 freq = 440.0,
                 duration = 5.0,
-                volume = None,
+                volume = None, # type: ignore
                 fs = 44100
             )
 
@@ -140,14 +140,14 @@ class WaveformTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             pgn.Note(
                 freq = 440.0,
-                duration = "5.0",
+                duration = "5.0", # type: ignore
                 volume = 0.5,
                 fs = 44100
             )
 
             pgn.Note(
                 freq = 440.0,
-                duration = "5",
+                duration = "5", # type: ignore
                 volume = 0.5,
                 fs = 44100
             )
@@ -157,7 +157,7 @@ class WaveformTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             pgn.Note(
                 freq = 440.0,
-                duration = None,
+                duration = None, # type: ignore
                 volume = 0.5,
                 fs = 44100
             )
